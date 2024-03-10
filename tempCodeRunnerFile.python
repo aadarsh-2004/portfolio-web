@@ -1,0 +1,24 @@
+import matplotlib.pyplot as plt
+import datetime
+import random
+
+# Generate random data for demonstration
+start_date = datetime.date(2000, 1, 1)
+end_date = datetime.date(2023, 1, 1)
+date_range = end_date - start_date
+num_days = date_range.days
+
+dates = [start_date + datetime.timedelta(days=i) for i in range(num_days)]
+values = [i + 5 * (0.5 - random.random()) for i in range(num_days)]
+
+# Create the plot
+plt.plot(dates, values)
+
+# Customize the plot
+plt.xlabel('Date')
+plt.ylabel('Value')
+plt.title('Historical Data')
+plt.grid(True)
+
+# Show the plot
+plt.show()
